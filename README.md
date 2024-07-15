@@ -1,5 +1,6 @@
 # tick-it
-
+## ERD
+![ERD](https://i.imgur.com/qa7eMqo.png)
 ## component hierarchy 
 
 ![component hierarchy](https://i.imgur.com/PsIQDd8.png)
