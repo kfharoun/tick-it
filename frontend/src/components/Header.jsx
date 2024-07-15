@@ -3,7 +3,8 @@ import Nav from './Nav'
 export default function Header () {
     return (
         <div className="Header">
-        {/* <Nav /> */} <h1>header</h1>
+            <h1>header</h1>
+            {<Nav />} 
         </div>
     )
 }
