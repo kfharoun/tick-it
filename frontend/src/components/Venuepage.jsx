@@ -2,8 +2,9 @@ import Eventlist from './Eventlist'
 
 
 export default function Venuepage() {
-    return 
+    return (
     <div>
         <h1>Venue Page</h1>
     </div>
+    )
 }
