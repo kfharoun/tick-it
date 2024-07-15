@@ -1,3 +1,4 @@
+
 export default function Bandpage() {
     return (
     <div classname = 'Bandpage'>
@@ -5,3 +6,4 @@ export default function Bandpage() {
     </div>
     )
 }
+
