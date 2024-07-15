@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
-import Bandpage from './Bandpage';
+import Artistpage from './Artistpage';
 import Eventpage from './Eventpage';
 import Venuepage from './Venuepage';
 import Eventlist from './Eventlist';
