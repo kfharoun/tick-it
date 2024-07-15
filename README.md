@@ -7,14 +7,14 @@
 
 ## Nav 
 - home
-- upcoming events
+- venues
     - by location
-    - by venue
-    - by artist
-- band
-    - all bands
-    - all genres 
+    - by venue name
+- artists
     - all artists
+    - artist names 
+- upcoming
+    - list 5 events w most recent dates
 - search bar 
     - search by word
     - search by artist 
