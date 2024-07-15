@@ -1,6 +1,6 @@
 import Nav from './Nav'
 
-export default function () {
+export default function Header () {
     return (
         <div className="Header">
             <Nav />
