@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Bandpage from './Bandpage';
-import Showpage from './Showpage';
-import Venuepage from './Venuepage';
+// import Eventpage from './Eventpage';
+// import Venuepage from './Venuepage';
 
 export default function Main() {
     return (
