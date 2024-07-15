@@ -11,6 +11,9 @@ export default function Main() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/events" element={<Eventlist />} />
+                <Route path="/events/:id" element={<Eventpage />} />
+                <Route path="/venues/:id" element={<Venuepage />} />
+                <Route path="/artists/:id" element={<Artistpage />} />
             </Routes>
         </div>
     );
