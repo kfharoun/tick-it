@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom";
 import axios from 'axios' 
 
 export default function Event() {
-    const [events, setEvents] = useState([])
+    const [event, setEvent] = useState(null)
+    const {id} = useParams()
 
     useEffect(() => {
         const eventData = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/events/')
+                const url = `http://localhost:8000/events/${id}`
+                const response = await axios.get(url)
                 if (response.status !== 200) {
                     throw new Error('Not working')
                 }
-                setEvents(response.data)
+                setEvent(response.data)
             } catch (error) {
                 console.error('Error grabbing events:', error)
             }
-        };
-    eventData ();
-    }, []);
+        }
+    eventData ()
+    }, [id]);
+
+    if (!event) {
+        return <div>Loading...</div>
+    }
 
     return (
     <div className = 'Event'>
        <h1>Event page</h1>
-       <ul>
+       {/* <ul>
        {events.map(event => (
-           <li key={event.id}>
+           <li key={event.id}> */}
            <img src={event.image_url} alt={event.name} />
            <div>
              <h2>Name: {event.name}</h2>
@@ -37,9 +44,9 @@ export default function Event() {
              <h4>Parking: {event.parking}</h4>
              <p>Parking Specifics: {event.parking_specifics}</p>
            </div>
-         </li>
+         {/* </li>
        ))}
-     </ul>
+     </ul> */}
     </div>
     );
 }
