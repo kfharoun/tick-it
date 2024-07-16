@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
   const [events, setEvents] = useState([])
@@ -9,20 +10,24 @@ export default function Home() {
     const getEvents = async () => {
       try {
         const response = await axios.get('http://localhost:8000/events/')
-        const eventNames = response.data.map(event => ({
-          name: event.event_name,
-          id: event._id,
+        const eventsData = response.data
+
+        const eventsWithArtists = await Promise.all(eventsData.map(async event => {
+          const artistResponse = await axios.get(event.artist);
+          const artistData = artistResponse.data
+          return { ...event, artist: artistData }
         }))
-        setEvents(response.data)
+
+        setEvents(eventsWithArtists)
 
         if (eventInfo.names.length === 0 && eventInfo.ids.length === 0) {
           setEventInfo({
-            names: eventNames.map(event => event.name),
-            ids: eventNames.map(event => event.id),
+            names: eventsWithArtists.map(event => event.name),
+            ids: eventsWithArtists.map(event => event.id),
           })
         }
       } catch (error) {
-        console.error('Cannot get events:', error)
+        console.error('Cannot get events:', error);
       }
     }
 
@@ -31,28 +36,24 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1>Popular Events!</h1>
-      <ul>
-        {events.filter(event => event.is_popular).map(event => (
-          <div key={event.id}>
-            <h2>{event.name}</h2>
-            <p>Artist: {event.artist_id}</p>
-            <p>Date: {event.date}</p>
-            <p>Time: {event.time}</p>
-            <p>Description: {event.description}</p>
-            <p>Ticket Price: ${event.ticket_price}</p>
+      <h1>Popular Concerts!</h1>
+      {events.filter(event => event.is_popular).map(event => (
+        <Link to={`/event/${event.id}`} key={event.id}>
+          <div>
+            <h2>{event.artist.name}</h2> 
             <img src={event.image_url} alt={event.name} style={{ width: '200px', height: 'auto' }} />
           </div>
-        ))}
-      </ul>
+        </Link>
+      ))}
       <h1>Upcoming Events!</h1>
       <ul>
         {events.map(event => (
+          <Link to={`/events/${event.id}`}>
           <div key={event.id}>
             <h2>{event.name}</h2>
-          </div>
+          </div></Link>
         ))}
       </ul>
     </div>
-  );
+  )
 }
