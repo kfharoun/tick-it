@@ -15,8 +15,8 @@ class Artist(models.Model):
 class Event(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE, related_name='events')
     name = models.CharField(max_length=200,default= 'no name')
-    date = models.DateField(default= 'no date')
-    time = models.TimeField(default= 'no time')
+    date = models.DateField(blank=True, null=True)
+    time = models.TimeField(blank=True, null=True)
     description = models.TextField(max_length=700,default= 'no description')
     ticket_price = models.DecimalField(max_digits=10, decimal_places=2)
     is_popular = models.BooleanField(default=False) 
@@ -31,6 +31,7 @@ class Venue(models.Model):
     address = models.TextField(max_length=400,default= 'no address')
     parking = models.BooleanField(default=False)
     parking_specifics = models.TextField(max_length=500, default= 'no parking')
+    date = models.DateField(blank=True, null=True)
     contact_email = models.CharField(max_length=200,default= 'no email')
     contact_phone = models.CharField(max_length=200,default= 'no phone')
     capacity = models.IntegerField(default= 'no default')
