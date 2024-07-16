@@ -40,10 +40,18 @@ export default function Artist() {
              <h3>Members: {artist.members}</h3>
              <h4>Years Active: {artist.years_active}</h4>
              <p>Band Description: {artist.band_description}</p>
+                    <div>
+                        <h3>Events:</h3>
+                        <ul>
+                            {artist.events.map(event => (
+                                <li key={event.id}>
+                                    <p>Event Name: {event.name}</p>
+                                    <p>Event Date: {event.date}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
            </div>
-         {/* </li>
-       ))}
-     </ul> */}
     </div>
     );
 }
