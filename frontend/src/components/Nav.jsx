@@ -41,7 +41,7 @@ export default function Nav() {
 
   return (
     <div className='Nav'>
-      {/* <Link className='PageTitle' to='/'>Tick-It!</Link>
+      <Link className='PageTitle' to='/'>Tick-It!</Link>
       <div className='navGroup'>
         <NavDropdown title="Venues" id="venues-dropdown">
           <NavDropdown.Item as={Link} to="/venues">All Venues</NavDropdown.Item>
@@ -55,7 +55,7 @@ export default function Nav() {
             </NavDropdown.Item>
           ))}
         </NavDropdown>
-      </div> */}
+      </div>
     </div>
   )
 }
