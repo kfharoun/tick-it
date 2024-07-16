@@ -44,3 +44,10 @@
   font-size: 3em;
   font-family: 'Bangers', sans-serif;
 }
+
+/* home */
+
+.Home {
+  display: flex;
+  flex-direction: column;
+}
