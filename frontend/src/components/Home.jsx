@@ -27,7 +27,7 @@ export default function Home() {
           })
         }
       } catch (error) {
-        console.error('Cannot get events:', error);
+        console.error('Cannot get events:', error)
       }
     }
 
@@ -38,10 +38,10 @@ export default function Home() {
     <div className="Home">
       <h1>Popular Concerts!</h1>
       {events.filter(event => event.is_popular).map(event => (
-        <Link to={`/event/${event.id}`} key={event.id}>
-          <div>
-            <h2>{event.artist.name}</h2> 
+        <Link to={`/events/${event.id}`} key={event.id}>
+          <div> 
             <img src={event.image_url} alt={event.name} style={{ width: '200px', height: 'auto' }} />
+            <h2>{event.artist.name}</h2>
           </div>
         </Link>
       ))}
