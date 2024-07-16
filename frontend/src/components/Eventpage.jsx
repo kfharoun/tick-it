@@ -22,6 +22,19 @@ export default function Event() {
     eventData ()
     }, [id]);
 
+    const handleDelete = async () => {
+        try {
+            const url = `http://localhost:8000/events/${id}`
+            const response = await axios.delete(url);
+            if (response.status === 204) {
+                console.log('Event deleted successfully')
+                window.location.href = '/events'
+            }
+        } catch (error) {
+            console.error('Error deleting', error);
+        }
+    };
+
     if (!event) {
         return <div>Loading...</div>
     }
@@ -35,18 +48,16 @@ export default function Event() {
            <img src={event.image_url} alt={event.name} />
            <div>
              <h2>Name: {event.name}</h2>
-             <h3>Address: {event.address}</h3>
              <h3>Date: {event.date}</h3>
-             <h3>Email: {event.contact_email}</h3>
-             <h3>Phone: {event.contact_phone}</h3>
-             <h3>Accessible Seating: {event.accessible_seating}</h3>
-             <h3>Capacity: {event.capacity}</h3>
-             <h4>Parking: {event.parking}</h4>
-             <p>Parking Specifics: {event.parking_specifics}</p>
+             <h3>Time: {event.time}</h3>
+             <h3>Ticket Price: {event.ticket_price}</h3>
+             <h3>Popular: {event.is_popular ? '✅' : '❌'}</h3>
+             <p>Description: {event.description}</p>
            </div>
          {/* </li>
        ))}
      </ul> */}
+     <button onClick={handleDelete}>Delete Event</button>
     </div>
     );
 }
