@@ -5,6 +5,11 @@
 
 ![component hierarchy](https://i.imgur.com/PsIQDd8.png)
 
+## wireframe
+
+![prototype](https://i.imgur.com/hHeZEv9.png)
+![prototype](https://i.imgur.com/aoaVvfg.png)
+
 ## Nav 
 - home
 - venues
