@@ -12,9 +12,10 @@ export default function Eventlist() {
       try {
         const response = await axios.get('http://localhost:8000/events/');
         setEvents(response.data);
+        console.log(response.data)
       } catch (err) {
         console.error('Error fetching events:', err.message);
-        setError('There was a problem fetching the event data. Please try again later.');
+        setError('There was a problem fetching the event data. Please try again.');
       } finally {
         setLoading(false);
       }
@@ -26,7 +27,7 @@ export default function Eventlist() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  // Ensure events is always an array
+  
   const eventList = Array.isArray(events) ? events : [];
 
   return (
