@@ -34,6 +34,7 @@ export default function Nav() {
     <div className='Nav'>
       <div className='pagetitle'>
         <Link className='PageTitle' to='/'>Tick-It!</Link>
+        </div>
         <Link to="/events/" className='nav'>Upcoming</Link>
         <NavDropdown title="Venues" id="venues-dropdown">
           {venues.map(venue => (
@@ -49,7 +50,6 @@ export default function Nav() {
             </NavDropdown.Item>
           ))}
         </NavDropdown>
-      </div>
     </div>
   )
 }
