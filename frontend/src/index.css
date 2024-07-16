@@ -6,34 +6,44 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424; */
-
+  background-color: #A93639;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+a, .nav-link {
   font-weight: 500;
-  color: #646cff;
+  color: black;
   text-decoration: inherit;
+  color: #FFDFB2;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link:active {
+  color: #FFDFB2 !important;
 }
 a:hover {
-  color: #535bf2;
+  /* color: #535bf2; */
 }
 
 body {
+  font-family: "Bungee", sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #A93639;
 }
 
 h1 {
   font-family: "Bangers", system-ui;
   font-weight: 400;
   font-style: normal;
+  color: #E69951;
 }
 
 
