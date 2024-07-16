@@ -49,3 +49,16 @@
 - artist name
 - upcoming events 
 - artist info
+
+
+## order 
+
+main
+
+- when we click on popular concerts, we're taken to the artist page, where we can see all the shows they have coming up
+    - when we click on a show it'll take us to the event page 
+
+- when we click on upcoming events, it will take you to the event page
+    - in event page, see venue info -> thisll take us to the venue
+
+- venues button in the navbar 
