@@ -10,6 +10,10 @@ class ArtistSerializer(serializers.HyperlinkedModelSerializer):
         queryset=Event.objects.all(),
         source='event'
     )
+    # name = serializers.PrimaryKeyRelatedField(
+    #     queryset=Artist.objects.all(),
+    #     source='artist'
+    # )
     class Meta:
         model = Artist
         fields = ('id', 'event','event_id', 'name', 'genre', 'members', 'years_active', 'band_description', 'image_url')
@@ -33,7 +37,7 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Event
-        fields = ('id', 'venue','venue_id', 'artist', 'artists', 'name', 'date', 'time', 'description', 'ticket_price', 'image_url')
+        fields = ('id', 'venue','venue_id', 'artist', 'artists', 'name', 'date', 'time', 'description', 'ticket_price', 'is_popular', 'image_url')
 
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
@@ -41,6 +45,10 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
         many=True,
         read_only=True
     )
+    # venue_name = serializers.HyperlinkedRelatedField(
+    #     view_name='venue_detail',
+    #     read_only=True
+    # )
     venue_url = serializers.ModelSerializer.serializer_url_field(
         view_name='venue_detail'
     )
