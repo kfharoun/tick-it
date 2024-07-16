@@ -1,1 +1,46 @@
+.App {
+  background-color: #A93639;
+}
 
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+/* header */
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active, 
+.dropdown-toggle:active, 
+.dropdown-toggle:hover,
+.dropdown-toggle:focus  {
+  color: #FFDFB2 !important;
+}
+
+.nav-link {
+  background-color: #C15740;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+.Nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Header {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+
+.pagetitle {
+  background-color: #C15740;
+  padding: 30px 10px;
+  border-radius: 30px;
+
+}
+.PageTitle {
+  font-size: 3em;
+  font-family: 'Bangers', sans-serif;
+}

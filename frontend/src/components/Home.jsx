@@ -40,7 +40,7 @@ export default function Home() {
       {events.filter(event => event.is_popular).map(event => (
         <Link to={`/events/${event.id}`} key={event.id}>
           <div> 
-            <img src={event.image_url} alt={event.name} style={{ width: '200px', height: 'auto' }} />
+            <img src={event.artist.image_url} alt={event.name} style={{ width: '200px', height: 'auto' }} />
             <h2>{event.artist.name}</h2>
           </div>
         </Link>
