@@ -16,5 +16,5 @@ export default function Main() {
                 <Route path="/artists/:id" element={<Artistpage />} />
             </Routes>
         </div>
-    );
+    )
 }
