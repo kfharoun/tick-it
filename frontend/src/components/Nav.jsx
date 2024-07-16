@@ -35,7 +35,7 @@ export default function Nav() {
       <div className='pagetitle'>
         <Link className='PageTitle' to='/'>Tick-It!</Link>
         </div>
-        <Link to="/events/" className='nav'>Upcoming</Link>
+        <Link to="/events/" className='nav, nav-link'>Upcoming</Link>
         <NavDropdown title="Venues" id="venues-dropdown">
           {venues.map(venue => (
             <NavDropdown.Item key={venue.id} as={Link} to={`/venues/${venue.id}`}>
