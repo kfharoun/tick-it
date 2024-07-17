@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from 'axios' 
 
 export default function Artist() {
@@ -30,9 +30,6 @@ export default function Artist() {
     return (
     <div className = 'Artist'>
        <h1>Artist page</h1>
-       {/* <ul>
-       {artists.map(artist => (
-           <li key={artist.id}> */}
            <img src={artist.image_url} alt={artist.name} />
            <div>
              <h2>Name: {artist.name}</h2>
@@ -51,6 +48,7 @@ export default function Artist() {
                             ))}
                         </ul>
                     </div>
+                <Link to={`/artists/${id}/update`}>Update Artist</Link>
            </div>
     </div>
     );
