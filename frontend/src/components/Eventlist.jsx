@@ -36,6 +36,7 @@ export default function Eventlist() {
       <ul>
         {eventList.map(event => (
          <Link to = {`/events/${event.id}`}><li key={event.id}>{event.name}</li></Link>
+         
         ))}
       </ul>
     </div>
