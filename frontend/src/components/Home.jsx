@@ -36,6 +36,7 @@ export default function Home() {
 
   return (
     <div className="Home">
+      <div className='popconc'>
       <h1 className='popularconcerts'>Popular Concerts!</h1>
       <div className='popevents'>
       {events.filter(event => event.is_popular).map(event => (
@@ -47,17 +48,17 @@ export default function Home() {
         </Link>
       ))}
       </div>
+      
+      <h1 className='upcomingeventss'>Upcoming Events!</h1>
       <div className='upevents'>
-      <h1>Upcoming Events!</h1>
-      <div className='upeventcont'>
         {events.map(event => (
           <Link to={`/events/${event.id}`}>
-          
-            <div className='upeventcont'>
+          <div className='upeventcont'>
+            
             <h2 className='conttext'>{event.artist.name}</h2>
             <h2 className='conttext'>{event.name}</h2>
-            
-          </div></Link>
+            </div>
+          </Link>
         ))}
       </div>
       </div>
