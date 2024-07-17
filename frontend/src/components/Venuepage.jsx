@@ -6,6 +6,7 @@ import { useParams, Link } from 'react-router-dom';
 
 export default function Venuepage() {
   const [venue, setVenue] = useState(null);
+  const [artist, setArtist] = useState(null)
   const [events, setEvents] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,10 +25,14 @@ export default function Venuepage() {
         const eventsData = eventsResponse.data;
         console.log(eventsData)
         
-
-       const venueEvents = eventsData.filter(event => event.venues.some(venue => venue.id === parseInt(id)))
+        const venueEvents = eventsData.filter(event => event.venues.some(venue => venue.id === parseInt(id)))
         setEvents(venueEvents);
         console.log(venueEvents)
+
+        const artistResponse = await axios.get(`http://localhost:8000/artists/${id}`);
+        const artistData = artistResponse.data;
+        setArtist(artistData);
+        console.log(artistData);
 
 
       } catch (err) {
@@ -71,12 +76,14 @@ console.log(events)
               <div key={event.id} className='event'>
                 <p>{new Date(event.date).toLocaleDateString()}</p>
                 <h3>{event.name}</h3>
-                {event.artists && event.artists.map(artist => (
+                {/* {event.artists && event.artists.map(artist => (
                     <div key={artist.id} className='artist'>
                       <img src={artist.image_url} alt={artist.name} />
                       <p>{artist.name}</p>
                     </div>
-                  ))}
+                  ))} */}
+                  <p>{artist.name}</p>
+                  <img src={artist.image_url} alt={artist.name} />
               </div>
             ))
             ) : (
