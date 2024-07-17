@@ -36,24 +36,31 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1>Popular Concerts!</h1>
+      <h1 className='popularconcerts'>Popular Concerts!</h1>
+      <div className='popevents'>
       {events.filter(event => event.is_popular).map(event => (
         <Link to={`/events/${event.id}`} key={event.id}>
-          <div> 
-            <img src={event.artist.image_url} alt={event.name} style={{ width: '200px', height: 'auto' }} />
-            <h2>{event.artist.name}</h2>
-          </div>
+          <div className='contenthome homepic'>
+            <img className='homepic' src={event.artist.image_url} alt={event.name} />
+            <h2 className='artistname'>{event.artist.name}</h2>
+            </div>
         </Link>
       ))}
+      </div>
+      <div className='upevents'>
       <h1>Upcoming Events!</h1>
-      <ul>
+      <div className='upeventcont'>
         {events.map(event => (
           <Link to={`/events/${event.id}`}>
-          <div key={event.id}>
-            <h2>{event.name}</h2>
+          
+            <div className='upeventcont'>
+            <h2 className='conttext'>{event.artist.name}</h2>
+            <h2 className='conttext'>{event.name}</h2>
+            
           </div></Link>
         ))}
-      </ul>
+      </div>
+      </div>
     </div>
   )
 }
