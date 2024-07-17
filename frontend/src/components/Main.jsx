@@ -4,6 +4,7 @@ import Artistpage from './Artistpage';
 import Eventpage from './Eventpage';
 import Venuepage from './Venuepage';
 import Eventlist from './Eventlist';
+import UpdateArtist from './UpdateArtist';
 
 export default function Main() {
     return (
@@ -14,6 +15,7 @@ export default function Main() {
                 <Route path="/events/:id" element={<Eventpage />} />
                 <Route path="/venues/:id" element={<Venuepage />} />
                 <Route path="/artists/:id" element={<Artistpage />} />
+                <Route exact path="/artists/:id/update" element={<UpdateArtist />} />
             </Routes>
         </div>
     )

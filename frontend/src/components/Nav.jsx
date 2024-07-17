@@ -32,9 +32,10 @@ export default function Nav() {
 
   return (
     <div className='Nav'>
+      <Link className='PageTitle' to='/'>
       <div className='pagetitle'>
-        <Link className='PageTitle' to='/'>Tick-It!</Link>
-        </div>
+        Tick-It!
+        </div></Link>
         <Link to="/events/" className='nav, nav-link'>Upcoming</Link>
         <NavDropdown title="Venues" id="venues-dropdown">
           {venues.map(venue => (
