@@ -32,13 +32,15 @@ export default function Eventlist() {
 
   return (
     <div className='Eventlist'>
-      <h1>Upcoming Events</h1>
-      <ul>
+      <div className='eventlistcontent'>
         {eventList.map(event => (
-         <Link to = {`/events/${event.id}`}><li key={event.id}>{event.name}</li></Link>
+
+         <Link  to = {`/events/${event.id}`}>
+          <img className="eventlistimage"src={event.image_url}/>
+          <p className="eventlistname" key={event.id}>{event.name}</p></Link>
          
         ))}
-      </ul>
     </div>
-  );
+    </div>
+  )
 }
