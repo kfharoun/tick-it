@@ -1,10 +1,19 @@
 .App {
   background-color: #A93639;
+  min-height: 70vh;
 }
 
 #root {
   width: 100vw;
   height: 100vh;
+}
+
+.Main {
+  flex: 1;
+}
+
+.Main {
+  min-height:70vh;
 }
 /* header */
 
@@ -67,7 +76,6 @@
   height: 222px;
   object-fit: cover;
   border-radius: 30px;
-  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
   filter: brightness(90%) contrast(110%) saturate(120%) sepia(10%) hue-rotate(-10deg);
   transition: transform 0.6s, filter 0.3s, box-shadow 0.3s;
   position: relative;
@@ -76,21 +84,21 @@
 
 @keyframes shrinkGrow {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
   50% {
-    transform: scale(0.9);
+    transform: scale(0.9) rotate(-5deg);
   }
+  70% {
+    transform: rotate(5deg);
+  } 
   100% {
-    transform: scale(1.02);
-
+    transform: scale(1.02) rotate(0deg);
   }
 }
-
 .homepic:hover {
   animation: shrinkGrow 0.6s ease-in-out forwards;
   filter: brightness(100%) contrast(90%) saturate(150%) sepia(0%) hue-rotate(0deg);
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .homepic:hover::after {
@@ -164,4 +172,146 @@
   display: flex;
   justify-content: space-around;
   font-size: 13px;
+  bottom: 0;
+}
+
+.footerlink {
+  transition: .9s ease all;
+}
+
+.footerlink:hover{
+  color:#E69951;
+}
+
+/* eventlist */
+
+.Eventlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px; 
+  margin: 0 auto; 
+}
+
+.eventlistcontent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.eventlistinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%; 
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s; 
+}
+
+.eventlistinfo:hover {
+  transform: scale(1.05); 
+  filter: brightness(1.1);
+  animation: shrinkGrow 0.6s ease-in-out forwards;
+  filter: brightness(100%) contrast(90%) saturate(150%) sepia(0%) hue-rotate(0deg);
+}
+
+.eventlistimage {
+  width: 250px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 10px;
+  filter: brightness(90%) contrast(110%) saturate(120%) sepia(10%) hue-rotate(-10deg);
+}
+
+.eventlistname {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.comingsoon {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 70%;
+}
+
+/* artist page */
+
+.Artist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.artistpageimg {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.nameimggenre {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+}
+
+.nameimggenreinfo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  max-width: 1200px;
+  gap: 80px; 
+  text-align: center;
+}
+
+.banddesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  margin-top: 4em;
+}
+
+.banddesctext {
+  margin-bottom: 2rex;
+  font-size: 18px;
+  text-align: center;
+}
+
+.upcomingartist {
+  margin-top: 20px;
+}
+
+.artistinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.eventartistinfo {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.thirdbit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.cominup {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.eventname {
+  margin-bottom: 1em;
 }
