@@ -62,6 +62,7 @@ export default function Home() {
         ))}
       </div>
       </div>
+      <Link to="/create">Create All</Link>
     </div>
   )
 }

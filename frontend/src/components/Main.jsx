@@ -5,6 +5,7 @@ import Eventpage from './Eventpage';
 import Venuepage from './Venuepage';
 import Eventlist from './Eventlist';
 import UpdateArtist from './UpdateArtist';
+import CreateEverything from './CreateEverything';
 
 export default function Main() {
     return (
@@ -15,7 +16,8 @@ export default function Main() {
                 <Route path="/events/:id" element={<Eventpage />} />
                 <Route path="/venues/:id" element={<Venuepage />} />
                 <Route path="/artists/:id" element={<Artistpage />} />
-                <Route exact path="/artists/:id/update" element={<UpdateArtist />} />
+                <Route path="/artists/:id/update" element={<UpdateArtist />} />
+                <Route path="/create" element={<CreateEverything/>} />
             </Routes>
         </div>
     )
