@@ -74,7 +74,7 @@ export default function Venuepage() {
           {events.length > 0 ? (
             events.map(event => (
               <div key={event.id} className='event'>
-                <p>{new Date(event.date).toLocaleDateString()}</p>
+                <p>{event.date}</p>
                 <Link to = {`/events/${event.id}`}><h3>{event.name}</h3></Link>
                   <p>{artist.name}</p>
                   <img src={artist.image_url} alt={artist.name} />
