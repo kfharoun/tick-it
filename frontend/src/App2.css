@@ -4,13 +4,7 @@
   gap: 20px;
   justify-items: center;
   align-items: center;
-}
-
-.venue {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  gap: -20p;
-  align-items: start; */
+  
 }
 
 .venue-info{
@@ -19,6 +13,7 @@
   gap: -20p;
   align-items: start;
   color: #FFDFB2;
+
 }
 
 .venue-image {
@@ -166,6 +161,8 @@ margin-top: 5px;
   align-items: start;
   color: #FFDFB2;
   margin-top: 20px;
+  
+
 }
 
 .event_name{
@@ -217,6 +214,7 @@ text-align: center;
   font-size: 24px;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-right: 20px;
 }
 .date{
   max-width: 222px;
