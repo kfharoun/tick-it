@@ -38,9 +38,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = (
-            'id', 'artist', 'artist_id', 'name', 'date', 'time', 
+            'id','event_venues', 'artist', 'artist_id', 'name', 'date', 'time', 
             'description', 'ticket_price', 'is_popular', 'image_url', 
-            'event_venues'
+            
         )
 
 class ArtistSerializer(serializers.ModelSerializer):
