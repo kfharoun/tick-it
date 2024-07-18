@@ -40,21 +40,27 @@ export default function Event() {
     }
 
     return (
-    <div className = 'eventdetails'>
-        <div className = 'eventname'>
-       <h1 className = 'event_name'>{event.name}</h1>
-           <img src={event.image_url} alt={event.name} />
-           </div>
+<div className = 'eventpage'>
+        <h1 className = 'event_name'>{event.name}</h1>
+        <div className = 'eventdetails'>
+           <img className = 'event-image'src={event.image_url} alt={event.name} />
            <div className='eventinfo'>
-             <h3 className = 'event-date'>Date: {event.date}</h3>
-             <h3 className='event-time'>Time: {event.time}</h3>
-             <h3 className ='event-price'>Ticket Price: {event.ticket_price}</h3>
-             <h3 className ='event-pop'>Popular: {event.is_popular ? '✅' : '❌'}</h3>
+            <div className='event-day'>
+             <h3 className = 'event-date'><h2 className='text'>Date</h2> {event.date}</h3>
+             <h3 className='event-time'><h2 className='text'>Time</h2>{event.time}</h3>
              </div>
-             <div className='event-description'>
-             <p className='description'>Description: {event.description}</p>
+             <div className='event-stats'>
+             <h3 className ='event-price'><h2 className='text'>Ticket Price</h2>{event.ticket_price}</h3>
+             <h3 className ='event-pop'><h2 className='text'>Popular?</h2>{event.is_popular ? '✅' : '❌'}</h3>
              </div>
+             </div>
+             
+            
+             <p className='description'><h2 className='event-description'>Description</h2> {event.description}</p>
+             
      <button className = 'button' onClick={handleDelete}>Delete Event</button>
+    </div>
     </div>
     );
 }
+             
