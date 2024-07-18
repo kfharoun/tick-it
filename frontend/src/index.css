@@ -53,8 +53,11 @@ button {
   border: none;
   font-size: 20px;
   text-align: center;
-  color: #FFDFB2
-
+  color: #FFDFB2;
+  width: 200px;
+  margin-left: 35px;
+  margin-top: 30px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
 }
 
 button:hover{
