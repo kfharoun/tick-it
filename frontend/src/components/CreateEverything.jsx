@@ -115,15 +115,16 @@ const handleSubmit = async (e) => {
     // Create Event
     if (eventName && eventDate && eventTime && eventDescription && ticketPrice && isPopular !== '' && eventImage) {
       const newEvent = {
-        artist: artist, 
+        artist_id: artist, 
         name: eventName,
         date: eventDate,
         time: eventTime,
         description: eventDescription,
         ticket_price: parseFloat(ticketPrice),
-        is_popular: Boolean(isPopular),
+        is_popular: isPopular === 'true',
         image_url: eventImage,
       }
+      console.log('Submitting new event:', newEvent);
       const eventResponse = await axios.post('http://localhost:8000/events/', newEvent)
       console.log('New Event created:', eventResponse.data)
     }
@@ -131,7 +132,7 @@ const handleSubmit = async (e) => {
     // Create Venue
     if (venueName && venueAddress && venueDate && contactEmail && contactPhone && capacity && venueImage) {
       const newVenue = {
-        event: nameEvent, // Use event ID here
+        event_id: nameEvent, // Use event ID here
         name: venueName,
         address: venueAddress,
         parking: hasParking,
