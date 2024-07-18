@@ -92,7 +92,7 @@ export default function Venuepage() {
                       <h3 className='event-name'>{event.name}</h3>
                     </Link>
                     <p className='date'>{event.date}</p>
-                    <img className='event-image' src={event.image_url} alt={event.name} />
+                    <img className='eventpic' src={event.image_url} alt={event.name} />
                     
                   </div>
                 ))
