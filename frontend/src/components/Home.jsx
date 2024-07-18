@@ -63,6 +63,7 @@ export default function Home() {
       </div>
       </div>
       <Link to="/create">Create All</Link>
+      <Link to="/modify/:id">Event All</Link>
     </div>
   )
 }
