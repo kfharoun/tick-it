@@ -21,13 +21,13 @@ INSERT INTO artists (name, genre, members, years_active, band_description, image
 
 -- Insert data into events table
 INSERT INTO events (artist_id, name, date, time, description, ticket_price, is_popular, image_url) VALUES 
-(1, 'boygenius Live', '2024-08-15', '19:00:00', 'An indie rock evening with boygenius', 50.00, TRUE, 'https://www.1057thepoint.com/wp-content/uploads/2023/07/M_boygenius_062623.jpg'),
-(2, 'Sabrina Carpenter Concert', '2024-09-10', '18:00:00', 'A magical pop experience with Sabrina Carpenter', 45.00, TRUE, 'https://www.billboard.com/wp-content/uploads/2023/08/Sabrina-Carpenter-eras-tour-2023-billboard-1548.jpg?w=942&h=623&crop=1'),
-(3, 'Chappell Roan Tour', '2024-07-20', '20:00:00', 'An electrifying performance by Chappell Roan', 40.00, TRUE, 'https://bloximages.chicago2.vip.townnews.com/kansan.com/content/tncms/assets/v3/editorial/d/06/d068e98c-fc1d-11ee-bf93-5b1f099aeb26/661ec141e2357.image.png?resize=755%2C500'),
-(4, 'The Last Dinner Party Show', '2024-10-05', '21:00:00', 'An indie rock night with The Last Dinner Party', 55.00, TRUE, 'https://belwoodmusic.com/wp-content/uploads/2023/10/img_20231015_211936-01.jpeg'),
-(5, 'Renee Rapp Live', '2024-11-12', '20:00:00', 'A captivating pop rock performance by Renee Rapp', 50.00, TRUE, 'https://images.squarespace-cdn.com/content/v1/551d47ade4b020e4eeb12417/d63775fc-7110-40d5-af39-60f22f4379dd/Renee+Rapp-15.jpg'),
-(6, 'Noah Kahan Concert', '2024-12-01', '19:30:00', 'A soulful evening with Noah Kahan', 55.00, TRUE, 'https://storage.googleapis.com/onmilwaukee-article-images/variants/y1f7ddmh1cekgsbkt2gbgxwqjlq7/44487ed8fba0f2b82d9d5c8e9a98ed4b9d67f7c75e21d8b1a6cda1869e8697fd'),
-(7, 'Angel Olsen Show', '2024-08-25', '20:00:00', 'An intimate indie rock performance by Angel Olsen', 50.00, TRUE, 'https://npr.brightspotcdn.com/dims4/default/3a803a4/2147483647/strip/true/crop/790x395+0+0/resize/880x440!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwcqs%2Ffiles%2F202004%2Fangel_olsen_-_roberto_ricciuti_wireimage.png');
+(1, 'boygenius Live', '2024-08-15', '19:00:00', 'An indie rock evening with boygenius', 120.00, TRUE, 'https://www.1057thepoint.com/wp-content/uploads/2023/07/M_boygenius_062623.jpg'),
+(2, 'Sabrina Carpenter Concert', '2024-09-10', '18:00:00', 'A magical pop experience with Sabrina Carpenter', 450.00, TRUE, 'https://www.billboard.com/wp-content/uploads/2023/08/Sabrina-Carpenter-eras-tour-2023-billboard-1548.jpg?w=942&h=623&crop=1'),
+(3, 'Chappell Roan Tour', '2024-07-20', '20:00:00', 'An electrifying performance by Chappell Roan', 400.00, TRUE, 'https://bloximages.chicago2.vip.townnews.com/kansan.com/content/tncms/assets/v3/editorial/d/06/d068e98c-fc1d-11ee-bf93-5b1f099aeb26/661ec141e2357.image.png?resize=755%2C500'),
+(4, 'The Last Dinner Party Show', '2024-10-05', '21:00:00', 'An indie rock night with The Last Dinner Party', 255.00, TRUE, 'https://belwoodmusic.com/wp-content/uploads/2023/10/img_20231015_211936-01.jpeg'),
+(5, 'Renee Rapp Live', '2024-11-12', '20:00:00', 'A captivating pop rock performance by Renee Rapp', 250.00, TRUE, 'https://images.squarespace-cdn.com/content/v1/551d47ade4b020e4eeb12417/d63775fc-7110-40d5-af39-60f22f4379dd/Renee+Rapp-15.jpg'),
+(6, 'Noah Kahan Concert', '2024-12-01', '19:30:00', 'A soulful evening with Noah Kahan', 155.00, TRUE, 'https://storage.googleapis.com/onmilwaukee-article-images/variants/y1f7ddmh1cekgsbkt2gbgxwqjlq7/44487ed8fba0f2b82d9d5c8e9a98ed4b9d67f7c75e21d8b1a6cda1869e8697fd'),
+(7, 'Angel Olsen Show', '2024-08-25', '20:00:00', 'An intimate indie rock performance by Angel Olsen', 90.00, TRUE, 'https://npr.brightspotcdn.com/dims4/default/3a803a4/2147483647/strip/true/crop/790x395+0+0/resize/880x440!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwcqs%2Ffiles%2F202004%2Fangel_olsen_-_roberto_ricciuti_wireimage.png');
 
 -- Insert data into venues table
 INSERT INTO venues (name, address, parking, parking_specifics, contact_email, contact_phone, capacity, accessible_seating, image_url) VALUES 
