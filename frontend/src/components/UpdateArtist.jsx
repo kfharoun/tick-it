@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-
+import {Form } from 'react-bootstrap'
 
 const UpdateArtist= () => {
     const { id } = useParams()
@@ -62,21 +62,31 @@ const UpdateArtist= () => {
     
 
     return (
-        <div>
-        <h1>Edit Artist</h1>
-        <form onSubmit={handleSubmit}>
-            <label>Name:</label>
-            <input type="text" name="name" value={artist.name} onChange={handleChange} required />
-            <label>Genre:</label>
-            <input type="text" name="genre" value={artist.genre} onChange={handleChange} />
-            <label>Members:</label>
-            <input type="text" name="members" value={artist.members} onChange={handleChange} />
-            <label>Years Active:</label>
-            <input type="text" name="years_active" value={artist.years_active} onChange={handleChange} />
-            <label>Band Description:</label>
-            <textarea name="band_description" value={artist.band_description} onChange={handleChange} />
-            <button type="submit">Update</button>
-        </form>
+        <div className="container mt-5 updateArtist">
+        <h1 className='editartist'>Edit Artist</h1>
+        <Form onSubmit={handleSubmit}>
+            <Form.Group>
+                <Form.Label>Name:</Form.Label>
+                <Form.Control type="text" name="name" value={artist.name} onChange={handleChange} required />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Genre:</Form.Label>
+                <Form.Control type="text" name="genre" value={artist.genre} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Members:</Form.Label>
+                <Form.Control type="text" name="members" value={artist.members} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Years Active:</Form.Label>
+                <Form.Control type="text" name="years_active" value={artist.years_active} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Band Description:</Form.Label>
+                <Form.Control as="textarea" className="text-area" name="band_description" value={artist.band_description} onChange={handleChange} />
+            </Form.Group>
+            <button className="buttonsubmitupdate" variant="primary" type="submit">Update</button>
+        </Form>
     </div>
 );
 };
