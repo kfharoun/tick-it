@@ -55,7 +55,7 @@ export default function Venuepage() {
   const venue_name = venues ? venues.name : '';
   
   const event_date = get_event_date(venue_name);
-
+  console.log(artists.ev)
   return (
     <div className='Venuepage'>
       <h1 className='venue-title'>{venues.name}</h1>
@@ -77,15 +77,16 @@ export default function Venuepage() {
               venues.event_venues.map(eventVenue => (
                 <div key={eventVenue.id} className='event'>
                   <Link to={`/events/${eventVenue.event.id}`}>
+                  <img src={eventVenue.image_url}/>
                     <h3 className='event-name'>{eventVenue.event.name}</h3>
                   </Link>
                   <p className='date'>{eventVenue.event.date}</p>
                   
                   {artists.map(artist => (
-                    eventVenue.event.name.includes(artist.name) &&
+                    // eventVenue.event.name.includes(artist.name) &&
                     <div key={artist.id} className='artist'>
                       <img className='artist-image' src={artist.image_url} alt={artist.name} />
-                      <h2 className='artist-name'>{artist.name}</h2>
+                      {/* <h2 className='artist-name'>{artist.name}</h2> */}
                     </div>
                   ))}  
                 </div>

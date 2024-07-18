@@ -11,7 +11,7 @@ class EventVenueSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = EventVenue
-        fields = ('id', 'event')  # Remove 'date' and 'time' from here
+        fields = ('id', 'event')  
 
 class VenueSerializer(serializers.ModelSerializer):
     event_venues = EventVenueSerializer(many=True, read_only=True)
