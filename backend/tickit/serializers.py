@@ -4,14 +4,14 @@ from .models import Artist, Event, Venue, EventVenue
 class EventInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'date', 'time')  # Include 'date' and 'time' here
 
 class EventVenueSerializer(serializers.ModelSerializer):
-    event = EventInfoSerializer(read_only=True)
+    event = EventInfoSerializer(read_only=True)  # Now includes date and time inside
     
     class Meta:
         model = EventVenue
-        fields = ('id', 'event', 'date', 'time')
+        fields = ('id', 'event')  # Remove 'date' and 'time' from here
 
 class VenueSerializer(serializers.ModelSerializer):
     event_venues = EventVenueSerializer(many=True, read_only=True)
@@ -52,5 +52,4 @@ class ArtistSerializer(serializers.ModelSerializer):
             'id', 'name', 'genre', 'members', 'years_active', 
             'band_description', 'image_url', 'events'
         )
-
 

@@ -31,11 +31,11 @@ INSERT INTO events (artist_id, name, date, time, description, ticket_price, is_p
 
 -- Insert data into venues table
 INSERT INTO venues (name, address, parking, parking_specifics, contact_email, contact_phone, capacity, accessible_seating, image_url) VALUES 
-('Red Rocks Amphitheatre', '18300 W Alameda Pkwy, Morrison, CO 80465', TRUE, 'Multiple lots, shuttle services available', 'info@redrocks.com', '720-865-2494', 9525, TRUE, 'https://upload.wikimedia.org/wikipedia/commons/1/15/Red_Rocks_Amphitheatre.JPG'),
-('The Greek Theatre', '2001 Gayley Rd, Berkeley, CA 94720', TRUE, 'Parking available nearby', 'info@thegreektheatre.com', '510-548-3010', 8500, TRUE, 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Greek_Theatre_%28Berkeley%29.jpg'),
-('Madison Square Garden', '4 Pennsylvania Plaza, New York, NY 10001', TRUE, 'On-site parking available', 'info@msg.com', '212-465-6741', 20000, TRUE, 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Madison_Square_Garden_%28MSG%29_-_Exterior_-_Pennsylvania_Plaza.jpg'),
-('The Hollywood Bowl', '2301 N Highland Ave, Los Angeles, CA 90068', TRUE, 'Multiple parking options available', 'info@hollywoodbowl.com', '323-850-2000', 17000, TRUE, 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Hollywood_Bowl_by_David_McKelvey.jpg'),
-('The Fillmore', '1805 Geary Blvd, San Francisco, CA 94115', TRUE, 'Limited parking available', 'info@thefillmore.com', '415-346-6000', 1300, TRUE, 'https://upload.wikimedia.org/wikipedia/commons/9/92/Fillmore_West_December_2010.JPG');
+('Red Rocks Amphitheatre', '18300 W Alameda Pkwy, Morrison, CO 80465', TRUE, 'Multiple lots, shuttle services available', 'info@redrocks.com', '720-865-2494', 9525, TRUE, 'https://assets.redrocksonline.com/wp-content/uploads/2024/05/06100549/TurnpikeTroubadours_RRX2022_0515_200959-5502_ALIVECOVERAGE-1920x1280.jpg'),
+('The Greek Theatre', '2001 Gayley Rd, Berkeley, CA 94720', TRUE, 'Parking available nearby', 'info@thegreektheatre.com', '510-548-3010', 8500, TRUE, 'https://thegreekberkeley.com/wp-content/themes/greekchild/assets/img/the-greek-theatre-hero-venue-info.jpg'),
+('Madison Square Garden', '4 Pennsylvania Plaza, New York, NY 10001', TRUE, 'On-site parking available', 'info@msg.com', '212-465-6741', 20000, TRUE, 'https://fashionista.com/.image/t_share/MTU2NDk1MDI2MjM3NDgyMDc1/harry-styles-gucci-madison-square-garden-3.jpg'),
+('The Hollywood Bowl', '2301 N Highland Ave, Los Angeles, CA 90068', TRUE, 'Multiple parking options available', 'info@hollywoodbowl.com', '323-850-2000', 17000, TRUE, 'https://www.discoverlosangeles.com/sites/default/files/images/2019-01/hollywood-bowl-fireworks.jpg'),
+('The Fillmore', '1805 Geary Blvd, San Francisco, CA 94115', TRUE, 'Limited parking available', 'info@thefillmore.com', '415-346-6000', 1300, TRUE, 'https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/7261098/0d048545-f44d-4763-83a1-8c0ca1fe75ac.jpg');
 
 INSERT INTO event_venues (event_id, venue_id, date, time) VALUES 
 (1, 1, '2024-08-15', '19:00:00'),  -- boygenius Live at The Indie Rock Arena
