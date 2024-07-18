@@ -40,24 +40,21 @@ export default function Event() {
     }
 
     return (
-    <div className = 'Event'>
-       <h1>Event page</h1>
-       {/* <ul>
-       {events.map(event => (
-           <li key={event.id}> */}
+    <div className = 'eventdetails'>
+        <div className = 'eventname'>
+       <h1 className = 'event_name'>{event.name}</h1>
            <img src={event.image_url} alt={event.name} />
-           <div>
-             <h2>Name: {event.name}</h2>
-             <h3>Date: {event.date}</h3>
-             <h3>Time: {event.time}</h3>
-             <h3>Ticket Price: {event.ticket_price}</h3>
-             <h3>Popular: {event.is_popular ? '✅' : '❌'}</h3>
-             <p>Description: {event.description}</p>
            </div>
-         {/* </li>
-       ))}
-     </ul> */}
-     <button onClick={handleDelete}>Delete Event</button>
+           <div className='eventinfo'>
+             <h3 className = 'event-date'>Date: {event.date}</h3>
+             <h3 className='event-time'>Time: {event.time}</h3>
+             <h3 className ='event-price'>Ticket Price: {event.ticket_price}</h3>
+             <h3 className ='event-pop'>Popular: {event.is_popular ? '✅' : '❌'}</h3>
+             </div>
+             <div className='event-description'>
+             <p className='description'>Description: {event.description}</p>
+             </div>
+     <button className = 'button' onClick={handleDelete}>Delete Event</button>
     </div>
     );
 }
