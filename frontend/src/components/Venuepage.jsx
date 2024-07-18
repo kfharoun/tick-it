@@ -66,6 +66,7 @@ export default function Venuepage() {
   
   const event_date = get_event_date(venue_name);
 
+  console.log(artists)
   return (
     <div className='Venuepage'>
       <h1 className='venue-title'>{venues.name}</h1>
@@ -82,29 +83,25 @@ export default function Venuepage() {
             </div>
           </div>
           <div className='upcoming-events'>
-            <h1 className='events-title'>Upcoming Events!</h1>
-            {venues.event_venues.length > 0 ? (
-              venues.event_venues.map(eventVenue => (
-                <div key={eventVenue.id} className='event'>
-                  <Link to={`/events/${eventVenue.event.id}`}>
-                    <h3 className='event-name'>{eventVenue.event.name}</h3>
-                  </Link>
-                  <p className='date'>{eventVenue.event.date}</p>
-                  
-                  {artists.map(artist => (
-                    eventVenue.event.name.includes(artist.name) &&
-                    <div key={artist.id} className='artist'>
-                      <img className='artist-image' src={artist.image_url} alt={artist.name} />
-                      <h2 className='artist-name'>{artist.name}</h2>
-                    </div>
-                  ))}  
-                </div>
-              ))
-            ) : (
-              <p className='no-events'>No events found</p>
-            )}
+              <h1 className='events-title'>Upcoming Events!</h1>
+              <div className='tours'>
+              {events.length > 0 ? (
+                events.map(event => (
+                  <div key={event.id} className='event'>
+                    <Link to={`/events/${event.id}`}>
+                      <h3 className='event-name'>{event.name}</h3>
+                    </Link>
+                    <p className='date'>{event.date}</p>
+                    <img className='event-image' src={event.image_url} alt={event.name} />
+                    
+                  </div>
+                ))
+              ) : (
+                <p className='no-events'>No events found</p>
+              )}
+              </div>
+            </div>
           </div>
-        </div>
       ) : (
         <p className='no-venue'>No venue found</p>
       )}

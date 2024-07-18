@@ -277,7 +277,11 @@
 }
 
 .upcomingartist {
-  margin-top: 20px;
+  margin-top: .5em;
+  margin-bottom: -1.9em;
+  z-index: 3;
+  position: relative;
+  text-shadow: 2px 2px 2px black;
 }
 
 .artistinfo {
@@ -308,6 +312,63 @@
   margin-bottom: 1em;
 }
 
-.eventimg {
-  max-width: 1200px;
+.eventartistinfo {
+  position: relative; 
+}
+
+.eventimgartist {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 50px;
+  border-radius: 30px;
+  filter: sepia(100%);
+  z-index: 0;
+}
+
+.eventnameartist, .eventdateartist {
+  font-size: 2em;
+  text-shadow: 2px 2px 2px black;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  transform: translateY(-50%); 
+  left: 0; 
+}
+
+.eventnameartist {
+  margin-top: -200px;
+  margin-bottom: -20px;
+}
+
+.eventdateartist {
+  margin-top: -160px;
+}
+
+
+@keyframes pulseSpin {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+}
+
+.eventnameartist, .eventdateartist {
+  transform: scale(1) rotate(0deg); 
+  transition: transform 0.6s ease-in-out; 
+}
+
+.cominup:hover .eventnameartist,
+.cominup:hover .eventdateartist {
+  animation: pulseSpin 0.6s ease-in-out forwards; 
+}
+
+.banddesc {
+  max-width: 270px;
 }

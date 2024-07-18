@@ -39,7 +39,8 @@ export default function Artist() {
                     <img className='artistpageimg' src={artist.image_url} alt={artist.name} />
                     <h1 className='artistnamepage'>{artist.name}!</h1>
                     <h3 className='artistgenre'>{artist.genre}</h3>
-                    <p>{artist.band_description}</p>
+                    <p className='banddesc'>{artist.band_description}</p>
+                    <Link to={`/artists/${id}/update`}><button>Update Artist</button></Link>
                 </div>
                 <div className='thirdbit'>
            <div className='cominup'>
@@ -47,16 +48,18 @@ export default function Artist() {
                 {artist.events.map(event => (
                     <Link to={`/events/${event.id}`} key={event.id}>
                         <div className='eventartistinfo'>
-                            <img src={event.image_url} className='eventimg' />
-                            <p className='eventname'>{event.name}</p>
-                            <p className='eventdate'>{formatDate(event.date)}</p>
+                            <img src={event.image_url} className='eventimgartist' />
+                            <p className='eventnameartist'>{event.name}</p>
+                            <p className='eventdateartist'>{formatDate(event.date)}</p>
                         </div>
                     </Link>
+                    
                 ))}
+                
+             </div>
+             
              </div>
              </div>
-             </div>
-            <Link to={`/artists/${id}/update`}>Update Artist</Link>
         </div>
     );
 }
