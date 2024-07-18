@@ -29,16 +29,16 @@ export default function Artist() {
 
     return (
     <div className = 'Artist'>
-       <h1>Artist page</h1>
-           <img src={artist.image_url} alt={artist.name} />
-           <div>
-             <h2>Name: {artist.name}</h2>
-             <h3>Genre: {artist.genre}</h3>
-             <h3>Members: {artist.members}</h3>
-             <h4>Years Active: {artist.years_active}</h4>
-             <p>Band Description: {artist.band_description}</p>
-                    <div>
-                        <h3>Events:</h3>
+       <h1 className='artist-page'>Artist page</h1>
+           <img className='artist-image' src={artist.image_url} alt={artist.name} />
+           <div className='artist-info'>
+             <h2 className='artist-name'>Name: {artist.name}</h2>
+             <h3 className='genre'>Genre: {artist.genre}</h3>
+             <h3 className='members'>Members: {artist.members}</h3>
+             <h4 className='years-active'>Years Active: {artist.years_active}</h4>
+             <p className='band-description'>Band Description: {artist.band_description}</p>
+                    <div className='upcoming-events'>
+                        <h3 className='events'>Events:</h3>
                         <ul>
                             {artist.events.map(event => (
                                 <li key={event.id}>
@@ -48,7 +48,7 @@ export default function Artist() {
                             ))}
                         </ul>
                     </div>
-                <Link to={`/artists/${id}/update`}>Update Artist</Link>
+                <Link to={`/artists/${id}/update`} className='update'>Update Artist</Link>
            </div>
     </div>
     );

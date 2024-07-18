@@ -1,0 +1,161 @@
+.Venuepage {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.venue {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: -20p;
+  align-items: start; */
+}
+
+.venue-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: -20p;
+  align-items: start;
+  color: #FFDFB2;
+
+  
+}
+
+.venue-image {
+  width: 300px;
+  height: 300px;
+  margin-left: 50px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+}
+.venue-address {
+  width: 270px;
+  height: 100px;
+  margin-left: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color:#C15740;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.venue-phone {
+  grid-column: 2;
+  grid-row: 2;
+  width: 270px;
+  height: 50px;
+  margin-top: -175px;
+  margin-left: 60px;
+  background-color:#C15740;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.park-accessibility {
+  grid-column: 3; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  height: 100px; 
+}
+.accessibility{
+  
+  font-size: 20px;
+}
+.parking{
+text-align: left;
+font-size: 20px;
+margin-right: 130px;
+margin-top: 5px;
+}
+
+.footerlink{
+  margin-bottom: 30px;
+  margin-right: 120px;
+  
+}
+
+.upcoming-events {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event{
+  width: 1000px;
+  margin-top: 75px;
+  margin-left: 20px;
+}
+
+.events-title {
+  margin-top: 150px;
+  height: 30px;
+}
+  
+
+.artist-image{
+  display: flex;
+  justify-content: flex-start;
+  width: 222px;
+  height: 222px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+  margin-bottom: 25px;
+  
+}
+
+.event-name{
+  max-width: 222px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s ease;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
+}
+
+
+.event-name:hover{
+  transform: rotate(2deg);
+  background-color: #CE6C46;
+}
+
+.date{
+  max-width: 222px;
+  font-size: 16px;
+  color: #E69951;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
+}
+
+.artist-name{
+  max-width: 222px;
+  margin-top: -40px;
+  font-size: 20px;
+  color: #FFDFB2;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
+ 
+  
+}
+
+  
+  
+ 
+
+
+
