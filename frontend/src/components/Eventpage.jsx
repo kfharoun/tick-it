@@ -43,7 +43,7 @@ export default function Event() {
 <div className = 'eventpage'>
         <h1 className = 'event_name'>{event.name}</h1>
         <div className = 'eventdetails'>
-           <img className = 'event-image'src={event.image_url} alt={event.name} />
+           <img className = 'eventimage'src={event.image_url} alt={event.name} />
            <div className='eventinfo'>
             <div className='event-day'>
              <h3 className = 'event-date'><h2 className='text'>Date</h2> {event.date}</h3>
