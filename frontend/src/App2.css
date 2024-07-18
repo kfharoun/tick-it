@@ -4,13 +4,7 @@
   gap: 20px;
   justify-items: center;
   align-items: center;
-}
-
-.venue {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
-  gap: -20p;
-  align-items: start; */
+  
 }
 
 .venue-info{
@@ -20,7 +14,6 @@
   align-items: start;
   color: #FFDFB2;
 
-  
 }
 
 .venue-image {
@@ -142,28 +135,120 @@ margin-top: 5px;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
 }
-.event-image{
-  display: flex;
-  justify-content: flex-start;
-  width: 222px;
-  height: 222px;
-  object-fit: cover;
-  border-radius: 30px;
-  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
-  margin-bottom: 25px;
-}
-
 .event-name:hover{
   transform: rotate(2deg);
   background-color: #CE6C46;
 }
+.event-image{
+  display: flex;
+  justify-content: flex-start;
+  width: 325px;
+  height: 325px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+  margin-bottom: 50px;
+  margin-left: 30px;
+  
+}
 
+.eventimage {
+width: 350px;
+height: 350px;
+object-fit: cover;
+border-radius: 30px;
+box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+margin-left: 15px;
+gap: 20px;
+}
+
+.eventpic{
+  width: 222px;
+  height: 222px;
+  border-radius: 30px;
+box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+}
+
+.eventdetails{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: -20p;
+  align-items: start;
+  color: #FFDFB2;
+  margin-top: 20px;
+  
+
+}
+
+.event_name{
+ display:flex;
+ justify-content: center;
+ font-size: 48px;
+ margin-left: 60px;
+ text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
+}
+.event-day{
+width: 300px;
+border-radius: 20px;
+text-align: center;
+}
+
+.event-date{
+  grid-column: 2;
+  font-size: 24px;
+}
+
+.event-time{
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 24px;
+}
+.event-stats{
+  margin-top: -90px;
+  border-radius: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.event-price{
+  margin-top: 100px;
+  grid-column: 2;
+  grid-row: 3;
+  font-size: 24px;
+}
+.event-pop{
+  grid-column: 2;
+  grid-row: 4;
+  font-size: 24px;
+  
+}
+.event-description{
+  background-color:#C15740;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 20px;
+}
 .date{
   max-width: 222px;
   font-size: 16px;
   color: #E69951;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
+}
+.description{
+ font-size: 24px;
+}
+
+.text{
+  background-color:#C15740;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .artist-name{
@@ -176,6 +261,7 @@ margin-top: 5px;
  
   
 }
+  
 
   
   
