@@ -47,6 +47,20 @@ h1 {
   color: #E69951;
 }
 
+button {
+  background-color:#C15740;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+  color: #FFDFB2
+
+}
+
+button:hover{
+  transform: rotate(2deg);
+  background-color: #CE6C46;
+}
 
 
 /* @media (prefers-color-scheme: light) {
