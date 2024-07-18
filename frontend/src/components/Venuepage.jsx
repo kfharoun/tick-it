@@ -25,9 +25,12 @@ export default function Venuepage() {
         const eventsData = eventsResponse.data;
         console.log(eventsData)
         
-        const venueEvents = eventsData.filter(event => event.venues.some(venue => venue.id === parseInt(id)))
+        // const venueEvents = eventsData.filter(event => event.venues.some(venue => venue.id === parseInt(id)))
+        // setEvents(venueEvents);
+        // console.log(venueEvents)
+
+        const venueEvents = eventsData.filter(event => event.venue_id === parseInt(id));
         setEvents(venueEvents);
-        console.log(venueEvents)
 
         const artistResponse = await axios.get(`http://localhost:8000/artists/${id}`);
         const artistData = artistResponse.data;
