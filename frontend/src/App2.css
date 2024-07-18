@@ -118,16 +118,40 @@ margin-top: 5px;
   margin-bottom: 25px;
   
 }
+.events-title{
+  margin-top: 100px;
+}
 
+.tours{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 3em;
+  max-width: 200px;
+  gap: 30px;
+  margin-top: -20px;
+  
+
+}
 .event-name{
-  max-width: 222px;
+  width: 225px;
   font-size: 20px;
   cursor: pointer;
   transition: all .3s ease;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.368);
 }
-
+.event-image{
+  display: flex;
+  justify-content: flex-start;
+  width: 222px;
+  height: 222px;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.193);
+  margin-bottom: 25px;
+}
 
 .event-name:hover{
   transform: rotate(2deg);
