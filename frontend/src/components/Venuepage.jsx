@@ -54,46 +54,49 @@ export default function Venuepage() {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  console.log(events)
+  console.log(events.artist)
     
   return (
     <div className='Venuepage'>
-      <h1>Venue: {venue.name}</h1>
+      <h1 className = 'venue-title'>{venue.name}</h1>
       {venue ? (
-        <div className = 'venue-image'>
-           <img src={venue.image_url} alt={venue.name} />
-          {/* Add any other venue details you want to display */}
+        <div className = 'venue'>
           <div className = 'venue-info'>
-          <h2>{venue.address}</h2>
-          <h2>{venue.contact_phone}</h2>
-          <h2>Accessible seating? {venue.accessible_seating ? '✅' : '❌'}</h2>
-          <h2>Is there parking? {venue.parking ? '✅' : '❌'}</h2>
-          <a className="footerlink" href={`mailto:${venue.contact_email}`}>email</a>
+           <img className='venue-image' src={venue.image_url} alt={venue.name} />
+          <h2 className ='venue-address'>{venue.address}</h2>
+          <h2 className ='venue-phone'>{venue.contact_phone}</h2>
+          <div className = 'park-accessibility'>
+          <h2 className ='accessibility'>Accessible seating? {venue.accessible_seating ? '✅' : '❌'}</h2>
+          <h2 className = 'parking'>Parking? {venue.parking ? '✅' : '❌'}</h2>
+          <a className="footerlink" href={`mailto:${venue.contact_email}`}>Email Venue</a>
+          </div>
     </div> 
-          
-    <div className = 'upcoming-events'>
+          <div className = 'upcoming-events'>
           {/* <Eventlist venueId={venue.id} /> */}
-          <h2>Upcoming Events</h2>
+          <h1 className='events-title'>Upcoming Events!</h1>
           {events.length > 0 ? (
             events.map(event => (
               <div key={event.id} className='event'>
-                <p>{event.date}</p>
-                <Link to = {`/events/${event.id}`}><h3>{event.name}</h3></Link>
-                  <p>{artist.name}</p>
-                  <img src={artist.image_url} alt={artist.name} />
+                <Link to = {`/events/${event.id}`}><h3 className = 'event-name'>{event.name}</h3></Link>
+                <p className = 'date'>{event.date}</p>
+                  <img className ="artist-image"src={artist.image_url} alt={artist.name} />
+                  <h2 className='artist-name'>{artist.name}</h2>
               </div>
             ))
             ) : (
-              <p>No events found</p>
+              <p className='no-events'>No events found</p>
             )}
           </div>
         </div>
       ) : (
-        <p>No venue found</p>
+        <p className='no-venue'>No venue found</p>
       )}
     </div>
   );
 }
+         
+          
+            
 
          
            
