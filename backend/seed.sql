@@ -27,7 +27,7 @@ INSERT INTO events (artist_id, name, date, time, description, ticket_price, is_p
 (4, 'The Last Dinner Party Tour', '2024-10-05', '21:00:00', 'An indie rock night with The Last Dinner Party', 255.00, TRUE, 'https://belwoodmusic.com/wp-content/uploads/2023/10/img_20231015_211936-01.jpeg'),
 (5, 'Snow Hard Feelings Tour', '2024-11-12', '20:00:00', 'A captivating pop rock performance by Renee Rapp', 250.00, TRUE, 'https://images.squarespace-cdn.com/content/v1/551d47ade4b020e4eeb12417/d63775fc-7110-40d5-af39-60f22f4379dd/Renee+Rapp-15.jpg'),
 (6, 'Home Tour', '2024-12-01', '19:30:00', 'A soulful evening with Noah Kahan', 155.00, TRUE, 'https://storage.googleapis.com/onmilwaukee-article-images/variants/y1f7ddmh1cekgsbkt2gbgxwqjlq7/44487ed8fba0f2b82d9d5c8e9a98ed4b9d67f7c75e21d8b1a6cda1869e8697fd'),
-(7, 'Angel Olsen Tour', '2024-08-25', '20:00:00', 'An intimate indie rock performance by Angel Olsen', 90.00, TRUE, 'https://npr.brightspotcdn.com/dims4/default/3a803a4/2147483647/strip/true/crop/790x395+0+0/resize/880x440!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwcqs%2Ffiles%2F202004%2Fangel_olsen_-_roberto_ricciuti_wireimage.png');
+(7, 'Angel Olsen Tour', '2024-08-25', '20:00:00', 'An intimate indie rock performance by Angel Olsen', 90.00, FALSE, 'https://npr.brightspotcdn.com/dims4/default/3a803a4/2147483647/strip/true/crop/790x395+0+0/resize/880x440!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fwcqs%2Ffiles%2F202004%2Fangel_olsen_-_roberto_ricciuti_wireimage.png');
 
 -- Insert data into venues table
 INSERT INTO venues (name, address, parking, parking_specifics, contact_email, contact_phone, capacity, accessible_seating, image_url) VALUES 
