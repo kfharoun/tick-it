@@ -8,4 +8,5 @@ urlpatterns = [
     path('events/<int:pk>/', EventDetail.as_view(), name='event-detail'),
     path('venues/', ListVenues.as_view(), name='venue-list'),
     path('venues/<int:pk>/', VenueDetail.as_view(), name='venue-detail'),
+    # path('eventvenue/<int:pk>/', EventVenueDetailView.as_view(), name='eventvenue-detail'),
 ]
