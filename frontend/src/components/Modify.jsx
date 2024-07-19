@@ -64,7 +64,7 @@ const Modify = () => {
     
         return (
             <div>
-            <h1>Edit Event</h1>
+            <h1 className='editartist'>Edit Event</h1>
             <form onSubmit={handleSubmit}>
                 <label>Name:</label>
                 <input type="text" name="name" value={event.name} onChange={handleChange} required />
