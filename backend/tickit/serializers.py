@@ -4,14 +4,25 @@ from .models import Artist, Event, Venue, EventVenue
 class EventInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ('id', 'name', 'date', 'time')  # Include 'date' and 'time' here
+        fields = ('id', 'name', 'date', 'time') 
 
 class EventVenueSerializer(serializers.ModelSerializer):
-    event = EventInfoSerializer(read_only=True)  # Now includes date and time inside
+    event = EventInfoSerializer(read_only=True)
     
     class Meta:
         model = EventVenue
-        fields = ('id', 'event')  
+        fields = ('id', 'event', 'venue') 
+    
+    # Friend helped with this (i didnt help but it's cool to have for the future)
+    def create(self, validated_data):
+        # Implement creation logic if necessary
+        return EventVenue.objects.create(**validated_data)
+    
+    def update(self, instance, validated_data):
+        # Implement update logic
+        instance.venue = validated_data.get('venue', instance.venue)
+        instance.save()
+        return instance
 
 class VenueSerializer(serializers.ModelSerializer):
     event_venues = EventVenueSerializer(many=True, read_only=True)
@@ -38,9 +49,9 @@ class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
         fields = (
-            'id','event_venues', 'artist', 'artist_id', 'name', 'date', 'time', 
+            'id', 'artist', 'artist_id', 'name', 'date', 'time', 
             'description', 'ticket_price', 'is_popular', 'image_url', 
-            
+            'event_venues'
         )
 
 class ArtistSerializer(serializers.ModelSerializer):
@@ -52,4 +63,3 @@ class ArtistSerializer(serializers.ModelSerializer):
             'id', 'name', 'genre', 'members', 'years_active', 
             'band_description', 'image_url', 'events'
         )
-

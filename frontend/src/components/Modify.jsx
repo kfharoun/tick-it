@@ -15,22 +15,22 @@
 //         const [loading, setLoading] = useState(true);
     
     
-//         useEffect(() => {
-//             const eventDetails = async () => {
-//                 try {
-//                     const response = await axios.get(`http://localhost:8000/eventvenue/${id}`)
-//                     setEvent(response.data)
-//                     setLoading(false)
-//                 } catch (error) {
-//                     console.error('Error fetching event data:', error)
-//                 }
-//             }
-//             if (id) {
-//                 eventDetails()
-//             } else {
-//                 setLoading(false)
-//             }
-//         }, [id]);
+        useEffect(() => {
+            const eventDetails = async () => {
+                try {
+                    const response = await axios.get(`http://localhost:8000/events/${id}`)
+                    setEvent(response.data)
+                    setLoading(false)
+                } catch (error) {
+                    console.error('Error fetching event data:', error)
+                }
+            }
+            if (id) {
+                eventDetails()
+            } else {
+                setLoading(false)
+            }
+        }, [id]);
     
 //         const handleSubmit = async (e) => {
 //             e.preventDefault();
@@ -62,22 +62,22 @@
 //             return <div>Loading...</div>
 //         }
     
-//         return (
-//             <div>
-//             <h1>Edit Event</h1>
-//             <form onSubmit={handleSubmit}>
-//                 <label>Name:</label>
-//                 <input type="text" name="name" value={event.name} onChange={handleChange} required />
-//                 <label>Venue:</label>
-//                 <input type="text" name="venue" value={event.venue} onChange={handleChange} />
-//                 <label>Date:</label>
-//                 <input type="date" name="date" value={event.date} onChange={handleChange} />
-//                 <label>Time:</label>
-//                 <input type="time" name="time" value={event.time} onChange={handleChange} />
-//                 <button type="submit">Update</button>
-//             </form>
-//         </div>
-//     );
-//     };
+        return (
+            <div>
+            <h1>Edit Event</h1>
+            <form onSubmit={handleSubmit}>
+                <label>Name:</label>
+                <input type="text" name="name" value={event.name} onChange={handleChange} required />
+                <label>Venue:</label>
+                <input type="text" name="venue" value={event.venue} onChange={handleChange} />
+                <label>Date:</label>
+                <input type="date" name="date" value={event.date} onChange={handleChange} />
+                <label>Time:</label>
+                <input type="time" name="time" value={event.time} onChange={handleChange} />
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    );
+   
 
 // export default Modify

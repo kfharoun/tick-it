@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Row, Col } from 'react-bootstrap';
 
 
 const CreateEverything = () => {
@@ -37,6 +37,38 @@ const [loading, setLoading] = useState(false)
 const [artists, setArtists] = useState([])
 const [venues, setVenues] = useState([])
 const [events, setEvents] = useState([])
+
+const initialArtistState = {
+  artistName: '',
+  genre: '',
+  members: '',
+  yearsActive: '',
+  bandDescription: '',
+  artistImage: ''
+};
+
+const initialEventState = {
+  eventName: '',
+  eventDate: '',
+  eventTime: '',
+  eventDescription: '',
+  ticketPrice: '',
+  isPopular: '',
+  eventImage: ''
+};
+
+const initialVenueState = {
+  venueName: '',
+  venueAddress: '',
+  venueDate: '',
+  contactEmail: '',
+  contactPhone: '',
+  capacity: '',
+  venueImage: '',
+  hasParking: '',
+  parkingSpecifics: '',
+  accessibleSeating: ''
+};
 
 // useEffect(() => {
 //     const getArtistResponse = async () => {
@@ -95,99 +127,117 @@ const renderData = async () => {
 }, [])
 
 const handleSubmit = async (e) => {
-  e.preventDefault();
+  e.preventDefault()
 
   try {
+    let submissionSuccessful = false
+
     // Create Artist
     if (artistName && genre && members && yearsActive && bandDescription && artistImage) {
-      const newArtist = {
-        name: artistName,
-        genre,
-        members,
-        years_active: yearsActive,
-        band_description: bandDescription,
-        image_url: artistImage,
-      }
-      const artistResponse = await axios.post('http://localhost:8000/artists/', newArtist);
-      console.log('New Artist created:', artistResponse.data);
+        const newArtist = {
+            name: artistName,
+            genre,
+            members,
+            years_active: yearsActive,
+            band_description: bandDescription,
+            image_url: artistImage,
+        };
+        await axios.post('http://localhost:8000/artists/', newArtist)
+        submissionSuccessful = true
     }
 
     // Create Event
     if (eventName && eventDate && eventTime && eventDescription && ticketPrice && isPopular !== '' && eventImage) {
-      const newEvent = {
-        artist_id: artist, 
-        name: eventName,
-        date: eventDate,
-        time: eventTime,
-        description: eventDescription,
-        ticket_price: parseFloat(ticketPrice),
-        is_popular: isPopular === 'true',
-        image_url: eventImage,
-      }
-      console.log('Submitting new event:', newEvent);
-      const eventResponse = await axios.post('http://localhost:8000/events/', newEvent)
-      console.log('New Event created:', eventResponse.data)
+        const newEvent = {
+            artist_id: artist, 
+            name: eventName,
+            date: eventDate,
+            time: eventTime,
+            description: eventDescription,
+            ticket_price: parseFloat(ticketPrice),
+            is_popular: isPopular === 'true',
+            image_url: eventImage,
+        };
+        await axios.post('http://localhost:8000/events/', newEvent)
+        submissionSuccessful = true
     }
 
     // Create Venue
     if (venueName && venueAddress && venueDate && contactEmail && contactPhone && capacity && venueImage) {
-      const newVenue = {
-        event_id: nameEvent, // Use event ID here
-        name: venueName,
-        address: venueAddress,
-        parking: hasParking,
-        parking_specifics: parkingSpecifics,
-        date: venueDate,
-        contact_email: contactEmail,
-        contact_phone: contactPhone,
-        capacity,
-        accessible_seating: accessibleSeating,
-        image_url: venueImage,
-      }
-      const venueResponse = await axios.post('http://localhost:8000/venues/', newVenue)
-      console.log('New Venue created:', venueResponse.data)
+        const newVenue = {
+            event_id: nameEvent, 
+            name: venueName,
+            address: venueAddress,
+            parking: hasParking,
+            parking_specifics: parkingSpecifics,
+            date: venueDate,
+            contact_email: contactEmail,
+            contact_phone: contactPhone,
+            capacity,
+            accessible_seating: accessibleSeating,
+            image_url: venueImage,
+        }
+        await axios.post('http://localhost:8000/venues/', newVenue);
+        submissionSuccessful = true;
     }
-  } catch (error) {
-    console.error('Error creating record:', error)
-  }
+
+    // If any of the submissions were successful, refresh the page
+    if (submissionSuccessful) {
+        window.location.reload()
+    }
+
+} catch (error) {
+    console.error('Error creating record:', error);
+    alert('Failed to submit data. Check console for errors.');
 }
+};
 
 if (loading) {
   return <div>Loading...</div>;
 }
 
 return (
-  <div>
-    <h1>Create Form</h1>
+  <div className='createverything container mt-5'>
+    {/* Artist */}
+    <h1 className='editartist createformtitle'>Create Form</h1>
+    <div className='createform'>
     <Form onSubmit={handleSubmit}>
+      
+        <Col>
+    <div className='artistform'>
       <h2>Artist</h2>
-      <Form.Group controlId="artistName">
+      <Form.Group controlId="artistName formcontrol">
         <Form.Label>Name:</Form.Label>
         <Form.Control type="text" value={artistName} onChange={(e) => setArtistName(e.target.value)} placeholder="Artist Name" />
       </Form.Group>
-      <Form.Group controlId="genre">
+      <Form.Group controlId="genre formcontrol">
         <Form.Label>Genre:</Form.Label>
         <Form.Control type="text" value={genre} onChange={(e) => setGenre(e.target.value)} placeholder="Genre" />
       </Form.Group>
-      <Form.Group controlId="members">
+      <Form.Group controlId="members formcontrol">
         <Form.Label>Members:</Form.Label>
         <Form.Control type="text" value={members} onChange={(e) => setMembers(e.target.value)} placeholder="Members" />
       </Form.Group>
-      <Form.Group controlId="yearsActive">
+      <Form.Group controlId="yearsActive formcontrol">
         <Form.Label>Years Active:</Form.Label>
         <Form.Control type="text" value={yearsActive} onChange={(e) => setYearsActive(e.target.value)} placeholder="Years Active" />
       </Form.Group>
-      <Form.Group controlId="bandDescription">
+      <Form.Group controlId="bandDescription formcontrol">
         <Form.Label>Band Description:</Form.Label>
         <Form.Control type="text" value={bandDescription} onChange={(e) => setBandDescription(e.target.value)} placeholder="Band Description" />
       </Form.Group>
-      <Form.Group controlId="artistImage">
+      <Form.Group controlId="artistImage formcontrol">
         <Form.Label>Artist Photo:</Form.Label>
         <Form.Control type="text" value={artistImage} onChange={(e) => setArtistImage(e.target.value)} placeholder="Image URL" />
       </Form.Group>
+      </div>
+      </Col>
 
+      {/* Event */}
+      <Col>
+      <div className='event'>
       <h2>Event</h2>
-      <Form.Group controlId="artist">
+      <Form.Group controlId="artistform formcontrol">
         <Form.Label>Artist:</Form.Label>
         <Form.Control as="select" value={artist} onChange={(e) => setArtist(e.target.value)}>
           <option value="">Select Artist</option>
@@ -198,35 +248,40 @@ return (
           ))}
         </Form.Control>
       </Form.Group>
-      <Form.Group controlId="eventName">
+      <Form.Group controlId="eventName formcontrol">
         <Form.Label>Event Name:</Form.Label>
         <Form.Control type="text" value={eventName} onChange={(e) => setEventName(e.target.value)} placeholder="Event Name" />
       </Form.Group>
-      <Form.Group controlId="eventDate">
+      <Form.Group controlId="eventDate formcontrol">
         <Form.Label>Event Date:</Form.Label>
         <Form.Control type="date" value={eventDate} onChange={(e) => setEventDate(e.target.value)} />
       </Form.Group>
-      <Form.Group controlId="eventTime">
+      <Form.Group controlId="eventTime formcontrol">
         <Form.Label>Event Time:</Form.Label>
         <Form.Control type="time" value={eventTime} onChange={(e) => setEventTime(e.target.value)} />
       </Form.Group>
-      <Form.Group controlId="eventDescription">
+      <Form.Group controlId="eventDescription formcontrol">
         <Form.Label>Description:</Form.Label>
         <Form.Control as="textarea" rows={3} value={eventDescription} onChange={(e) => setEventDescription(e.target.value)} placeholder="Event Description" />
       </Form.Group>
-      <Form.Group controlId="ticketPrice">
+      <Form.Group controlId="ticketPrice formcontrol">
         <Form.Label>Ticket Price:</Form.Label>
         <Form.Control type="text" value={ticketPrice} onChange={(e) => setTicketPrice(e.target.value)} placeholder="Ticket Price" />
       </Form.Group>
-      <Form.Group controlId="isPopular">
+      <Form.Group controlId="isPopular formcontrol">
         <Form.Label>Popular:</Form.Label>
         <Form.Control type="text" value={isPopular} onChange={(e) => setIsPopular(e.target.value)} placeholder="Is Popular" />
       </Form.Group>
-      <Form.Group controlId="eventImage">
+      <Form.Group controlId="eventImage formcontrol">
         <Form.Label>Event Photo:</Form.Label>
         <Form.Control type="text" value={eventImage} onChange={(e) => setEventImage(e.target.value)} placeholder="Event Image URL" />
       </Form.Group>
+      </div>
+      </Col>
 
+      {/* Venue */}
+<Col>
+      <div className='venueform'>
       <h2>Venue</h2>
       <Form.Group controlId="nameEvent">
         <Form.Label>Event Name:</Form.Label>
@@ -254,7 +309,9 @@ return (
           checked={hasParking}
           onChange={(e) => setHasParking(e.target.checked)}
         />
+        
       </Form.Group>
+      <Col>
       {hasParking && (
         <Form.Group controlId="parkingSpecifics">
           <Form.Label>Parking Specifics:</Form.Label>
@@ -289,11 +346,17 @@ return (
         <Form.Label>Venue Photo:</Form.Label>
         <Form.Control type="text" value={venueImage} onChange={(e) => setVenueImage(e.target.value)} placeholder="Venue Image URL" />
       </Form.Group>
-
-      <Button variant="primary" type="submit">
+      </Col>
+      </div>
+      
+      </Col>
+      <button className="createbutton" variant="primary" type="submit">
         Create
-      </Button>
+      </button>
+     
     </Form>
+
+    </div>
   </div>
 )
 }
