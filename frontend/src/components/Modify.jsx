@@ -1,18 +1,18 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
-// import { useParams, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
-// const Modify = () => {
-//         const { id } = useParams()
-//         const navigate = useNavigate()
-//         const [event, setEvent] = useState({
-//             name: '',
-//             venue: '',
-//             date: '',
-//             time: '',
-//         });
-//         const [updated, setUpdated] = useState(false)
-//         const [loading, setLoading] = useState(true);
+const Modify = () => {
+        const { id } = useParams()
+        const navigate = useNavigate()
+        const [event, setEvent] = useState({
+            name: '',
+            venue: '',
+            date: '',
+            time: '',
+        });
+        const [updated, setUpdated] = useState(false)
+        const [loading, setLoading] = useState(true);
     
     
         useEffect(() => {
@@ -32,35 +32,35 @@
             }
         }, [id]);
     
-//         const handleSubmit = async (e) => {
-//             e.preventDefault();
-//             try {
-//                 const response = await axios.put(`http://localhost:8000/eventvenue/${id}`, event)
-//                 console.log('Eventt updated successfully:', response.data)
-//                 setUpdated(true);
-//             } catch (error) {
-//                 console.error('Error updating artist:', error)
-//             }
-//         };
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+                const response = await axios.put(`http://localhost:8000/eventvenue/${id}`, event)
+                console.log('Eventt updated successfully:', response.data)
+                setUpdated(true);
+            } catch (error) {
+                console.error('Error updating artist:', error)
+            }
+        };
     
-//         const handleChange = (e) => {
-//             const { name, value } = e.target
-//             setEvent(prevEvent => ({
-//                 ...prevEvent,
-//                 [name]: value
-//             }));
-//         };
+        const handleChange = (e) => {
+            const { name, value } = e.target
+            setEvent(prevEvent => ({
+                ...prevEvent,
+                [name]: value
+            }));
+        };
     
     
-//         useEffect(() => {
-//             if (updated) {
-//                 navigate('/');
-//             }
-//         }, [updated, navigate]);
+        useEffect(() => {
+            if (updated) {
+                navigate('/');
+            }
+        }, [updated, navigate]);
     
-//         if (loading) {
-//             return <div>Loading...</div>
-//         }
+        if (loading) {
+            return <div>Loading...</div>
+        }
     
         return (
             <div>
@@ -79,5 +79,5 @@
         </div>
     );
    
-
-// export default Modify
+}
+export default Modify
