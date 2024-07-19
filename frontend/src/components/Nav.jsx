@@ -52,9 +52,9 @@ export default function Nav() {
           ))}
         </NavDropdown>
         <NavDropdown title="Administrator" id="artists-dropdown">
-            <NavDropdown.Item key={artist.id} as={Link} to={`/create`}>
+        <NavDropdown.Item as={Link} to={`/create`}>
               create form
-            </NavDropdown.Item>
+            </NavDropdown.Item> 
         </NavDropdown>
     </div>
   )
