@@ -407,3 +407,52 @@
 .editartist {
   text-shadow: 2px 2px 2px black;
 }
+
+/* create everything */
+
+.createverything{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.createform {
+  justify-content: center;
+  align-items: center;
+  width: 1600px;
+  margin-bottom: 5em;
+  margin-left: 43em;
+}
+
+.form-control{
+  width: 300px;
+}
+.artistform {
+  margin-top: -5em;
+}
+
+.eventform {
+  width: 200px;
+  margin-bottom: -10em;
+}
+
+.venueform {
+  margin-top: -7em;
+}
+
+.createbutton{
+  margin-right: 45em;
+  margin-top: -20em;
+}
+
+.createformtitle {
+  margin-bottom: -.5em;
+}
