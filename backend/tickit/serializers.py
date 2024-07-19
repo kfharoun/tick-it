@@ -13,6 +13,7 @@ class EventVenueSerializer(serializers.ModelSerializer):
         model = EventVenue
         fields = ('id', 'event', 'venue') 
     
+    # Friend helped with this (i didnt help but it's cool to have for the future)
     def create(self, validated_data):
         # Implement creation logic if necessary
         return EventVenue.objects.create(**validated_data)
