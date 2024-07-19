@@ -54,7 +54,7 @@ export default function Nav() {
         <NavDropdown title="Administrator" id="artists-dropdown">
             <NavDropdown.Item as={Link} to={`/create`}>
               create form
-            </NavDropdown.Item>
+            </NavDropdown.Item> 
         </NavDropdown>
     </div>
   )

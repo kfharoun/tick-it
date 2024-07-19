@@ -6,7 +6,7 @@ import Venuepage from './Venuepage';
 import Eventlist from './Eventlist';
 import UpdateArtist from './UpdateArtist';
 import CreateEverything from './CreateEverything';
-import Modify from './Modify';
+// import Modify from './Modify';
 
 export default function Main() {
     return (
@@ -19,7 +19,7 @@ export default function Main() {
                 <Route path="/artists/:id" element={<Artistpage />} />
                 <Route path="/artists/:id/update" element={<UpdateArtist/>} />
                 <Route path="/create" element={<CreateEverything/>} />
-                <Route path="/modify/:id" element={<Modify/>} />
+                {/* <Route path="/modify/:id" element={<Modify/>} /> */}
             </Routes>
         </div>
     )
