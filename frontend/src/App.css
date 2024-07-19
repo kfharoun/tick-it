@@ -157,7 +157,9 @@
   margin-left: 66.36%;
   max-width: 1000px;
 }
-
+.upevents {
+  margin-bottom: 2em;
+}
 .popconc {
   display: flex;
   flex-direction: column;

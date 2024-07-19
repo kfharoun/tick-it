@@ -18,7 +18,7 @@ const Modify = () => {
         useEffect(() => {
             const eventDetails = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:8000/eventvenue/${id}`)
+                    const response = await axios.get(`http://localhost:8000/events/${id}`)
                     setEvent(response.data)
                     setLoading(false)
                 } catch (error) {
