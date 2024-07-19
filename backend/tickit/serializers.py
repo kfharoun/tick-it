@@ -35,7 +35,7 @@ class VenueSerializer(serializers.ModelSerializer):
         )
 
 class EventSerializer(serializers.ModelSerializer):
-    event_venues = EventVenueSerializer(many=True)
+    event_venues = EventVenueSerializer(many=True, read_only=True)
     artist = serializers.HyperlinkedRelatedField(
         view_name='artist-detail',
         read_only=True
@@ -52,18 +52,6 @@ class EventSerializer(serializers.ModelSerializer):
             'description', 'ticket_price', 'is_popular', 'image_url', 
             'event_venues'
         )
-
-    def update(self, instance, validated_data):
-        # handling nested updates - thanks monty! 
-        event_venues_data = validated_data.pop('event_venues', [])
-        for event_venue_data in event_venues_data:
-            event_venue_id = event_venue_data.get('id', None)
-            if event_venue_id:
-                ev_venue = EventVenue.objects.get(id=event_venue_id)
-                for key, value in event_venue_data.items():
-                    setattr(ev_venue, key, value)
-                ev_venue.save()
-        return super().update(instance, validated_data)
 
 class ArtistSerializer(serializers.ModelSerializer):
     events = EventSerializer(many=True, read_only=True)
